@@ -1,0 +1,25 @@
+name: My First Workflow
+
+on: push
+
+jobs:
+  first_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v4
+
+      - name: List and Read Files
+        run: |
+          ls -la
+          cat README.md
+
+      # This installs the binary to the runner's ephemeral environment
+      - name: Install cowsay
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cowsay
+
+      # Adjusted to call the full path if the standard command alias isn't registered immediately
+      - name: Generate ASCII artwork
+        run: /usr/games/cowsay -f dragon "Run for cover, I am a DRAGON ....RAWR" >> dragon.txt
