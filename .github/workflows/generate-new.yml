@@ -23,3 +23,5 @@ jobs:
       # Adjusted to call the full path if the standard command alias isn't registered immediately
       - name: Generate ASCII artwork
         run: /usr/games/cowsay -f dragon "Run for cover, I am a DRAGON ....RAWR" >> dragon.txt
+      - name:
+        run cat dragon.txt
