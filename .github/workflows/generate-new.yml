@@ -25,4 +25,4 @@ jobs:
         run: /usr/games/cowsay -f dragon "Run for cover, I am a DRAGON ....RAWR" >> dragon.txt
 
       - name: lets see the dragon
-        run cat dragon.txt
+        run: cat dragon.txt
